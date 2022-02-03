@@ -34,4 +34,13 @@ resource "tfe_workspace" "workspace" {
     ingress_submodules = false
     oauth_token_id     = var.tfc_oauth_token
   }
+
+  lifecycle {
+    ignore_changes = [
+      # Ignore changes to tags, e.g. because a management agent
+      # updates these based on some ruleset managed elsewhere.
+      agent_pool_id,
+      execution_mode,
+    ]
+  }
 }
