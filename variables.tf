@@ -41,3 +41,15 @@ variable "organization" {
     type = string
     description = "TFC/E orgnization name"
 }
+
+variable "vcsbranch" {
+  type = string
+  description = "The branch of the repository"
+  default = ""
+}
+
+variable "vcsworkingdirectory" {
+  type = string
+  description = "The root directory of Terraform code in the repository"
+  default = ""
+}

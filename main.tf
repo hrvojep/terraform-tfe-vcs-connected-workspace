@@ -28,11 +28,12 @@ resource "tfe_workspace" "workspace" {
   tag_names                     = var.tags
   terraform_version             = var.terraform_version
   trigger_prefixes              = []
-
+  working_directory = var.vcsworkingdirectory
   vcs_repo {
     identifier         = github_repository.repo.full_name
     ingress_submodules = false
     oauth_token_id     = var.tfc_oauth_token
+    branch = var.vcsbranch
   }
 
   lifecycle {
