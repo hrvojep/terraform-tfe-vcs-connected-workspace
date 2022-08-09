@@ -6,13 +6,12 @@ variable "tfc_oauth_token" {
 
 variable "github_owner" {
     type = string
-    default  ="ausmartway"
     description = "the owner of the template repository, this can be github orgnization name."
 }
 
 variable "template_repo" {
     type = string
-    default = "terraform-template"
+    #default = "terraform-template"
     description = "the name of the template repository"
 }
 
